@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>VSOLUTION - Jonatan</title>
+    <link rel="icon" type="image/png" href="favicons/img-favicon.png">
+
+    <!--Core CSS -->
+    <link rel="stylesheet" href="https://api.jntville.com.br/vsolution/css/css-app.css">
+    <link rel="stylesheet" href="https://api.jntville.com.br/vsolution/css/css-main.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    
+
+</head>
+
+<body>
+    <div id="huro-app" class="app-wrapper">
+
+        <div class="app-overlay"></div>
+
+
+
+            
+        </div>
+        
+        
+
+
+      
+
+        <!-- Content Wrapper -->
+        <div id="app-projects" class="view-wrapper" data-naver-offset="214" data-menu-item="#layouts-sidebar-menu" data-mobile-item="#home-sidebar-menu-mobile">
+
+            <div class="page-content-wrapper">
+                <div class="page-content is-relative">
+
+                    <div class="page-title has-text-centered">
+                        <!-- Sidebar Trigger -->
+                        <div class="huro-hamburger nav-trigger push-resize" data-sidebar="layouts-sidebar">
+                            <span class="menu-toggle has-chevron">
+                                    <span class="icon-box-toggle">
+                                        <span class="rotate">
+                                            <i class="icon-line-top"></i>
+                                            <i class="icon-line-center"></i>
+                                            <i class="icon-line-bottom"></i>
+                                        </span>
+                            </span>
+                            </span>
+                        </div>
+
+                        <div class="title-wrap">
+                            <h1 class="title is-4">VSOLUTION - Jonatan</h1>
+                        </div>
+
+                        <div class="toolbar ml-auto">
+
+                         
+                          
+
+                           
+
+
+                        </div>
+                    </div>
+
+                    <div class="datatable-toolbar">
+
+                        <div class="field has-addons is-disabled">
+                            <p class="control">
+                                <button class="button h-button">
+                                    <span class="icon is-small">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                    <span>Editar</span>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button id="deletar" class="button h-button">
+                                    <span class="icon is-small">
+                                            <i class="fas fa-times"></i>
+                                        </span>
+                                    <span>Deletar</span>
+                                </button>
+                            </p>
+                 
+                        </div>
+
+                        <div class="buttons">
+                            <button id="addempresa" class="button h-button is-primary is-elevated h-modal-trigger" data-modal="demo-large-modal">
+                                <span class="icon">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                <span>Add Empresa</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="page-content-inner">
+
+                        <!-- Datatable -->
+                        <div id="table" class="table-wrapper has-loader" data-simplebar>
+
+                              
+
+                            <table id="users-datatable" class="table is-datatable is-hoverable table-is-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="control">
+                                                <label class="checkbox is-primary is-outlined is-circle">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <th>CNPJ</th>
+                                        <th>Nome</th>
+                                        <th>Moeda</th>
+                                        <th>Cidade</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                               <!--Loader-->
+                               <div class="h-loader-wrapper">
+                                <div class="loader is-xl is-loading"></div>
+                            </div>
+                        </div>
+                       
+
+
+                        
+
+                        <div id="paging-first-datatable" class="pagination datatable-pagination">
+                            <div class="datatable-info">
+                                <span></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div id="demo-large-modal" class="modal h-modal is-large">
+            <div class="modal-background h-modal-close"></div>
+            <div class="modal-content">
+                
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <h3>Dados da Empresa</h3>
+                        <button id="fechar" class="h-modal-close ml-auto" aria-label="close">
+                            <i data-feather="x"></i>
+                        </button>
+                    </header>
+
+                    <div class="modal-card-body">
+                        <div id="contentmodal" class="inner-content has-loader">
+                            
+                            <!--Loader-->
+                            <div class="h-loader-wrapper">
+                                <div class="loader is-xl is-loading"></div>
+                            </div>
+
+                            <div class="card-inner">
+                                
+
+                                <div class="columns is-multiline">
+                                <div class="column is-6">
+                                <div class="field has-addons">
+                                    <div class="control is-expanded">
+                                        <input class="input" name="cnpj" id="cnpj" type="text" placeholder="Insira o CNPJ da Empresa" required="required" pattern="[0-9]+$">
+                                        <p class="help">INSIRA O CNPJ E CLIQUE EM PESQUISAR PARA PREENCHA OS DADOS AUTOMATICAMENTE</p>
+                                    </div>
+                                    <div class="control">
+                                        <a id="getcnpj" class="button is-primary">
+                                            PESQUISAR CNPJ
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                                </div>
+
+                                <div class="column is-6">
+                                <div class="field">
+                                    <div class="control">
+                                        <input type="text" name="sosical" id="sosical" class="input is-primary-focus" placeholder="Razão Social">
+                                        <p class="help">INSIRA A RAZÃO SOCIAL DA EMPRESA</p>
+                                  </div>
+                                  </div>
+                                </div>
+                            </div> 
+                                   
+
+
+                                <div class="columns is-multiline">
+                                <div class="column is-6">
+                                        <div class="field has-addons">
+                                            <p class="control">
+                                                <span class="select">
+                                                        <select name="moeda" id="moeda">
+                                                            <option value="$">$</option>
+                                                            <option value="£">£</option>
+                                                            <option value="€">€</option>
+                                                            <option value="R$">R$</option>
+                                                        </select>
+                                                    </span>
+                                            </p>
+                                           
+                                            <p class="control is-expanded">
+                                                <input class="input" name="cotacao" id="cotacao" type="text" placeholder="Valor da Cotação">
+                                                
+                                            </p>
+                                            <p class="control">
+                                                <a class="button is-success">
+                                                   Cotar Valor
+                                                </a>
+                                            </p>
+                                            
+                                        </div>
+                                        <p class="help">A COTAÇÃO RETORNA O VALOR PADÃO EM REAIS</p>
+                                    </div>
+
+                                    
+                                        <div class="column is-6">
+                                        <div class="field has-addons">
+                                            <div class="control is-expanded">
+                                                <input name="cep" id="cep" class="input" type="text" placeholder="Insira o CEP da Empresa">
+                                            </div>
+                                            <div class="control">
+                                                <a class="button is-primary">
+                                                    PESQUISAR ENDEREÇO
+                                                </a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </div>
+
+                                        
+                                    <div class="columns is-multiline">
+                                        <div class="column is-6">
+                             
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input type="text" name="logradouro" id="logradouro" class="input is-primary-focus" placeholder="Logradouro">
+                                                    <p class="help">LOGRADOURO DA EMPRESA</p>
+                                    
+                                            
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    
+                                        <div class="column is-6">
+                             
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input type="text" name="numero" id="numero" class="input is-primary-focus" placeholder="Numero">
+                                                    <p class="help">NUMERO DO ENDEREÇO</p>
+                                    
+                                            
+                                                </div>
+                                            </div>
+
+                                        
+                                    </div>
+
+                                    
+                                            <div class="column is-6">       
+                             
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input type="text" name="bairro" id="bairro" class="input is-primary-focus" placeholder="Bairro">
+                                                    <p class="help">BAIRRO DO ENDEREÇO</p>
+                                    
+                                            
+                                                </div>
+                                            </div>
+
+                                       
+                                    </div>
+
+                                   
+                                        <div class="column is-6">
+                             
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input type="text" name="cidade" id="cidade" class="input is-primary-focus" placeholder="Cidade">
+                                                    <p class="help">CEIDADE DA EMPRESA</p>
+                                    
+                                            
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    
+
+                                   
+                                
+                                    </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-card-foot is-centered">
+                        <input class="input" name="idempresa" id="idempresa" type="hidden">
+                        <a class="button h-button is-rounded h-modal-close">VOLTAR</a>
+                        <a id="salvar" class="button h-button is-primary is-raised is-rounded">SALVAR</a>
+                    </div>
+                </div>
+                 </div>
+            </div>
+        </div>
+
+
+        <script src="https://api.jntville.com.br/vsolution/js/js-app.js"></script>
+
+
+        <script src="https://api.jntville.com.br/vsolution/js/js-functions.js"></script>
+        <script src="https://api.jntville.com.br/vsolution/js/js-main.js"></script>
+        <script src="https://api.jntville.com.br/vsolution/js/js-components.js"></script>
+        <script src="https://api.jntville.com.br/vsolution/js/js-popover.js"></script>
+        <script src="https://api.jntville.com.br/vsolution/js/js-widgets.js"></script>
+
+
+
+        <script src="https://api.jntville.com.br/vsolution/js/js-touch.js"></script>
+
+       
+        <script src="https://api.jntville.com.br/vsolution/js/js-jquery.mask.js"></script>
+        <script src="https://api.jntville.com.br/vsolution/js/js-datatables.js"></script>
+
+
+        <script src="https://api.jntville.com.br/vsolution/js/js-syntax.js"></script>
+        
+        
+    </div>
+</body>
+
+</html>
